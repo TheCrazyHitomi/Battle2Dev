@@ -9,7 +9,7 @@
 }
 
 body{
-    background-image: linear-gradient(rgba(218, 248, 187, 0.2), rgba(255, 255, 0, 0.5)),
+    background-image: linear-gradient(rgba(248, 255, 241, 0.4), rgba(147, 197, 143, 0.5)),
                   url("https://www.mindenpictures.com/cache/pcache2/90776882.jpg");
     background-repeat: no-repeat;
     background-size: cover;
@@ -35,7 +35,7 @@ h3{
 }
 
 header{
-    background-color: yellowgreen;
+    background-color: rgb(196, 226, 136);
     width: 100%;
     display: flex;
     flex-direction: column;
