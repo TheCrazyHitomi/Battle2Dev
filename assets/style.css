@@ -105,8 +105,8 @@ label{
 input {
     width: 100%;
     border-radius: 0.7rem 0 2rem 0;
-    border: 1.5px solid green;
-    background-color: rgba(180, 248, 168, 0.5);
+    border: 1.5px solid yellowgreen;
+    background-color: rgba(180, 248, 168, 0.3);
 }
 
 
