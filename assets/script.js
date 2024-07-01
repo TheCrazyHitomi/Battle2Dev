@@ -1,3 +1,5 @@
+const strengthElement = document.getElementById("passwordStrength");
+
 function checkPasswordStrength(password){
     //définir les variables de départ
     let strength = 0;
@@ -6,7 +8,7 @@ function checkPasswordStrength(password){
 
     // verrification de la longueur du MdP
     if (password.length < 8){
-        tips += "Mot de passe trop court";
+        tips += "<li>Mot de passe trop court</li>";
     }
     else {
         strength += 1;
@@ -17,7 +19,7 @@ function checkPasswordStrength(password){
         strength +=1;
     }
     else {
-        tips += " Utiliser des minuscules et des majuscules";
+        tips += "<li>Utiliser des minuscules et des majuscules</li>";
     }
 
     // Vérification de l'utilisation de nombres 
@@ -25,7 +27,7 @@ function checkPasswordStrength(password){
         strength += 1;
     }
     else {
-        tips += "inclure au minimum 1 chiffre";
+        tips += "<li>inclure au minimum 1 chiffre</li>";
     }
 
     // Vérification d'utilisation de caractères spéciaux
@@ -33,37 +35,44 @@ function checkPasswordStrength(password){
         strength +=1;
     }
     else {
-        tips += "Inclure un caractère Spécial";
+        tips += "<li>Inclure un caractère Spécial</li>";
     }
 
 
-    //let strengthElement = document.getElementById("passwordStrength");
+    
 
 
     // retour sur les résultats obtenues
     if (strength < 2){
+        strengthElement.style.color = "red";
         return "Mot de passe faible" + tips;
-        //strengthElement.style.color = "red";
     } else if (strength === 2){
+        strengthElement.style.color = "orange";
         return "Mot de passe moyen" + tips;
-        //strengthElement.style.color = "orange";
     } else if (strength === 3){
+        strengthElement.style.color = "black";
         return "Mot de passe fort" + tips;
-        //strengthElement.style.color = "black";
     } else {
+        strengthElement.style.color = "green";
         return "Mot de passe Validé" + tips;
-        //strengthElement.style.color = "green";
     }
 
-
-}
+};
 
 
 const btnConnexion = document.querySelector("button");
 const inputPassword = document.getElementById("password");
 
-btnConnexion.addEventListener("click", function () {
-    const errorPassword = checkPasswordStrength(inputPassword.value);
-    alert(errorPassword);
+inputPassword.addEventListener("keydown", function () {
+    strengthElement.innerHTML = checkPasswordStrength(inputPassword.value);
+});
+
+btnConnexion.addEventListener("click", function (event) {
+    event.preventDefault();
+    if (strengthElement.innerHTML === "Mot de passe Validé") {
+        window.open("coucou.html");
+    } else {
+        window.alert("Fatal Error 418");
+    }
 });
 
