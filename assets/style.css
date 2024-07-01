@@ -77,7 +77,7 @@ header{
 
 .formContainer{
     background: linear-gradient( rgb(196, 226, 136, 0), rgb(196, 226, 136, 1), rgb(196, 226, 136, 0));
-    width:14rem;
+    width: calc(15rem + 2vw);
     border-radius: 2rem;
     padding: 1rem;
     display: flex;
@@ -92,7 +92,7 @@ header{
     align-items: center;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; 
     margin: 1.5rem;
-    width:90%;
+    width: 200px;
 }
 .inputForm{
     display: flex;
@@ -157,7 +157,7 @@ footer{
     z-index: 20;
     width: auto;
     height: 100px;
-    margin-left: 3vw;
+    margin-left: 5vw;
     display: flex;
     align-items: center;
 
