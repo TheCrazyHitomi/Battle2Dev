@@ -8,11 +8,17 @@
 	src: url('/Battle2Dev/assets/Fonts/YoungSerif-Regular.woff2') format(‘woff2’),
 }
 
+html{
+    font-size: 1em;
+}
+
 body{
     margin: 0;
+    max-width: 100%;
 }
 
 .hero{
+   
     height: 700px;
     background-color: aqua;
     position: sticky;
@@ -41,12 +47,12 @@ body{
 
 h1{
     font-family: 'Soria', sans-serif;
-    font-size: 3.5rem;
+    font-size: 3rem;
 }
 
 h2{
     font-family: 'Space Grotesk', sans-serif;
-    font-size: 2rem;
+    font-size: calc(1rem + 0.5vw);
     margin-bottom: 0.5rem;
 }
 
