@@ -12,17 +12,40 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap');
 
+
+[data-theme="light"] {
+    --primary: rgb(196, 226, 136);
+    --secondary: rgb(196, 226, 136);
+    --tertiary: rgba(250, 86, 159, 0.64);
+    --emphasis: yellowgreen;
+    --background: lavenderblush;
+    --color: black;
+}
+
+[data-theme="dark"] {
+    --primary: rgb(196, 226, 136);
+    --secondary: rgb(196, 226, 136);
+    --tertiary: rgba(250, 86, 159, 0.64);
+    --emphasis: yellowgreen;
+    --background: #2d2a41;
+    --color: #ede5a3;
+}
+
+
 html{
     font-size: 1em;
     max-width: 100%;
 }
 
 
-@media (Prefers-color-scheme: light){
     body{
         margin: 0;
-        background-color:lavenderblush;
+        background-color: var(--background);
+        color: var(--color);
     }
+
+    
+
 
     .hero{
         height: 700px;
@@ -33,12 +56,17 @@ html{
         align-items: center;
         justify-content: center;
     }
-
+    
+    
     .hero video{
         width: 100%;
         height: 100%;
         object-fit: cover;
         z-index: 1;
+    }
+    
+    .hero video.dark{
+        filter: grayscale(70%);
     }
 
     .hero .formContainer {
@@ -72,9 +100,7 @@ html{
         color: darkolivegreen;
     }
 
-    ::placeholder{
-        color: darkolivegreen;
-    }
+    
 
     header{
         z-index: 10;
@@ -88,6 +114,10 @@ html{
         justify-content: center;
     }
 
+    header.dark{
+        background: linear-gradient(rgb(22, 37, 29), rgb(196, 226, 136, 0));
+    }
+
     .formContainer{ 
         background: linear-gradient( rgb(196, 226, 136, 0), rgb(196, 226, 136, 0.6), rgb(196, 226, 136, 0));
         backdrop-filter: blur(10px);
@@ -98,6 +128,10 @@ html{
         flex-direction: column;
         align-content: center;
         justify-content: center;
+    }
+
+    .formContainer.dark{
+        background: linear-gradient( rgb(196, 226, 136, 0), rgb(22, 37, 29, 0.6), rgb(196, 226, 136, 0));
     }
 
     .form{
@@ -126,7 +160,17 @@ html{
         background-color: rgba(180, 248, 168, 0.3);
     }
 
+    input.dark{
+        border: 1.5px solid rgb(22, 37, 29);
+        background-color: rgba(22, 37, 29, 0.3);
+    }
 
+    ::placeholder{
+        color: darkolivegreen;
+    }
+    ::placeholder.dark{
+        color: #ede5a3;
+    }
 
     .button{
         display: flex;
@@ -162,8 +206,10 @@ html{
         justify-content: center;
         background: linear-gradient( rgb(196, 226, 136, 1), rgb(196, 226, 136, 0));
     }
-}
 
+footer.dark{
+    background: linear-gradient(rgb(22, 37, 29), rgb(196, 226, 136, 0));
+}
 
 /* CSS toggle */
 
@@ -197,7 +243,7 @@ html{
 }
 
 .switch-3 .back {
-    background-color: var(--dark-sky);
+    background-color: var(--light-sky);
     position: absolute;
     width: 100%;
     height: 100%;
@@ -211,26 +257,17 @@ html{
   }
   
   .switch-3 .checkbox:checked ~ .back {
-    background-color: var(--light-sky);
-  }
-  
-  .switch-3 .checkbox:checked ~ .moon {
-    transform: translateX(24px) rotate(180deg);
-    opacity: 0;
+    background-color: var(--dark-sky);
   }
   
   .switch-3 .checkbox:checked ~ .sun {
     transform: translateX(24px) rotate(180deg);
-    opacity: 1;
+    opacity: 0;
   }
   
-  .switch-3 .moon {
-    position: absolute;
-    left: 6px;
-    top: 4px;
-    height: 24px;
-    fill: var(--moon);
-    transition: 0.5s;
+  .switch-3 .checkbox:checked ~ .moon {
+    transform: translateX(24px) rotate(360deg);
+    opacity: 1;
   }
   
   .switch-3 .sun {
@@ -240,17 +277,14 @@ html{
     height: 24px;
     fill: var(--sun);
     transition: 0.5s;
-    opacity: 0;
   }
-
-
-  @media (Prefers-color-scheme: dark){
-    body{
-        background-color: #2d2a41;
-        color:#ede5a3 ;
-    }
-
-    .hero{
-        filter: grayscale(50%);
-    }
+  
+  .switch-3 .moon {
+    position: absolute;
+    left: 6px;
+    top: 4px;
+    height: 24px;
+    fill: var(--moon);
+    transition: 0.5s;
+    opacity: 0;
   }

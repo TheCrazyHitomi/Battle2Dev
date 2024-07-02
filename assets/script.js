@@ -1,3 +1,6 @@
+// ** Module de vérification de mot de passe & validation du formulaire **
+
+
 const strengthElement = document.getElementById("passwordStrength");
 
 function checkPasswordStrength(password){
@@ -76,3 +79,13 @@ btnConnexion.addEventListener("click", function (event) {
     }
 });
 
+
+
+// ** Dark mode Toggle **
+
+const checkbox = document.getElementById("checkbox");
+checkbox.addEventListener("change", () => {
+  document.body.classList.toggle("dark");
+  document.getElementById("hero").classList.toggle("dark");
+  console.log("kakoukaoku");
+});
