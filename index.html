@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr" data-theme="light">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,8 +9,8 @@
     <script type="text/javascript" src="./assets/script.js" defer></script>
 </head>
 
-<body>
-    <header>
+<body data-theme="light">
+    <header id="header">
         <h1>Battle2Dev</h1>
     </header>
     <div class="toggle">
@@ -39,11 +39,11 @@
     </div>
 
     <section class="hero" id="hero">
-        <video loop="loop"autoplay="autoplay" muted>
+        <video id ="video" loop="loop"autoplay="autoplay" muted>
             <source src="/assets/images/vecteezy-beautiful-and-cute-pink-cherry-blossoms-sakura-flowers-36943356_ANbMXY5O.mp4"/> 
         </video>
-
-        <div class="formContainer">
+    
+        <div class="formContainer" id="formContainer">
         <h2>Connectez-vous</h2>
         <h3> </h3>
     
@@ -57,13 +57,13 @@
                 <input type="password" id="password" name="password" placeholder="Mot de passe"/>
             </div>
             <p id="passwordStrength"></p>
-            <div class="button">
+            <div class="button" id="button">
                 <button type="submit">Connexion</button>
             </div> 
         </form>
         </div>
     </section>
-    <footer>
+    <footer id="footer">
         <h3>Made with love by <br><a target="_blank" href="https://github.com/TheCrazyHitomi">The Crazy Hitomi</a>
         2024©</h3>
     </footer>

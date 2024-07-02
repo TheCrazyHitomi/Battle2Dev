@@ -15,20 +15,30 @@
 
 [data-theme="light"] {
     --primary: rgb(196, 226, 136);
-    --secondary: rgb(196, 226, 136);
+    --primarySemi:rgba(196, 226, 136, 0.6) ;
+    --primaryTrans:rgba(196, 226, 136,0);
+    --secondary: darkolivegreen;
     --tertiary: rgba(250, 86, 159, 0.64);
+    --tertiaryLight: rgb(252, 240, 244);
     --emphasis: yellowgreen;
     --background: lavenderblush;
+    --inputBackground:rgba(180, 248, 168, 0.3);
     --color: black;
+    --shadow:rgba(9, 48, 2, 0.5);
 }
 
 [data-theme="dark"] {
-    --primary: rgb(196, 226, 136);
-    --secondary: rgb(196, 226, 136);
-    --tertiary: rgba(250, 86, 159, 0.64);
-    --emphasis: yellowgreen;
+    --primary: rgb(22, 37, 29);
+    --primarySemi:rgba(22, 37, 29, 0.6) ;
+    --primaryTrans:rgba(22, 37, 29,0);
+    --secondary: rgb(216, 206, 215);
+    --tertiary: rgb(117, 85, 126);
+    --tertiaryLight: rgb(252, 240, 244);
+    --emphasis: rgb(95, 52, 102);
     --background: #2d2a41;
-    --color: #ede5a3;
+    --inputBackground:rgba(218, 187, 222, 0.3);
+    --color: rgb(212, 237, 163);
+    --shadow:rgba(48, 2, 48, 0.5);
 }
 
 
@@ -43,8 +53,6 @@ html{
         background-color: var(--background);
         color: var(--color);
     }
-
-    
 
 
     .hero{
@@ -97,7 +105,7 @@ html{
     }
 
     a{
-        color: darkolivegreen;
+        color: var(--secondary);
     }
 
     
@@ -106,7 +114,7 @@ html{
         z-index: 10;
         position: absolute;
         margin: 0;
-        background: linear-gradient( rgb(196, 226, 136, 1), rgb(196, 226, 136, 0));
+        background: linear-gradient( var(--primary), var(--primaryTrans));
         width: 100%;
         display: flex;
         flex-direction: column;
@@ -114,12 +122,9 @@ html{
         justify-content: center;
     }
 
-    header.dark{
-        background: linear-gradient(rgb(22, 37, 29), rgb(196, 226, 136, 0));
-    }
 
     .formContainer{ 
-        background: linear-gradient( rgb(196, 226, 136, 0), rgb(196, 226, 136, 0.6), rgb(196, 226, 136, 0));
+        background: linear-gradient( var(--primaryTrans), var(--primarySemi), var(--primaryTrans));
         backdrop-filter: blur(10px);
         width: calc(15rem + 2vw);
         border-radius: 2rem;
@@ -128,10 +133,6 @@ html{
         flex-direction: column;
         align-content: center;
         justify-content: center;
-    }
-
-    .formContainer.dark{
-        background: linear-gradient( rgb(196, 226, 136, 0), rgb(22, 37, 29, 0.6), rgb(196, 226, 136, 0));
     }
 
     .form{
@@ -156,20 +157,12 @@ html{
     input {
         width: 100%;
         border-radius: 0.7rem 0 2rem 0;
-        border: 1.5px solid darkolivegreen;
-        background-color: rgba(180, 248, 168, 0.3);
-    }
-
-    input.dark{
-        border: 1.5px solid rgb(22, 37, 29);
-        background-color: rgba(22, 37, 29, 0.3);
+        border: 1.5px solid var(--secondary);
+        background-color: var(--inputBackground);
     }
 
     ::placeholder{
-        color: darkolivegreen;
-    }
-    ::placeholder.dark{
-        color: #ede5a3;
+        color: var(--secondary);
     }
 
     .button{
@@ -183,17 +176,18 @@ html{
         font-size: large;
         border-radius: 5rem 0 5rem 0;
         border: none;
-        background-color: yellowgreen;
-        padding-inline: 1rem;
+        color: var(--color);
+        background-color: var(--emphasis);
+        padding-inline: 1.2rem;
         padding-top: 0.4rem;
-        box-shadow: 2px 2px 5px 1px rgba(9, 48, 2, 0.5);
+        box-shadow: 2px 2px 5px 1px var(--shadow);
         transition: all 0.3s ease-in;
         
     }
 
     button:hover{
-        color:rgb(252, 240, 244);
-        background-color: rgba(250, 86, 159, 0.64);
+        color:var(--tertiaryLight);
+        background-color: var(--tertiary);
         border-radius: 5rem ;
         transition: all 0.3s ease-in;
     }
@@ -204,12 +198,8 @@ html{
         display: flex;
         align-items: center;
         justify-content: center;
-        background: linear-gradient( rgb(196, 226, 136, 1), rgb(196, 226, 136, 0));
+        background: linear-gradient( var(--primary), var(--primaryTrans));
     }
-
-footer.dark{
-    background: linear-gradient(rgb(22, 37, 29), rgb(196, 226, 136, 0));
-}
 
 /* CSS toggle */
 
@@ -228,12 +218,12 @@ footer.dark{
 .switch-3 {
     --dark-sky: #2d2a41;
     --moon: #ede5a3;
-    --light-sky:rgba(250, 86, 159);
+    --light-sky: var(--tertiary);
     --sun: #f7f7f7;
     display: inline-block;
     position: relative;
     border-radius: 5em;
-    box-shadow: 2px 2px 5px 1px rgba(9, 48, 2, 0.5), inset 2px 2px 5px 1px rgba(9, 48, 2, 0.5);
+    box-shadow: 2px 2px 5px 1px var(--shadow), inset 2px 2px 5px 1px var(--shadow);
     cursor: pointer;
     width: 60px;
     height: 25px;

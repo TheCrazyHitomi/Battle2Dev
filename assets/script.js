@@ -83,9 +83,21 @@ btnConnexion.addEventListener("click", function (event) {
 
 // ** Dark mode Toggle **
 
-const checkbox = document.getElementById("checkbox");
+/* const checkbox = document.getElementById("checkbox");
 checkbox.addEventListener("change", () => {
   document.body.classList.toggle("dark");
-  document.getElementById("hero").classList.toggle("dark");
+  document.getElementById("video").classList.toggle("dark");
+  document.getElementById("header").classList.toggle("dark");
+  document.getElementById("formContainer").classList.toggle("dark");
+  document.getElementById("button").classList.toggle("dark");
+  document.getElementById("footer").classList.toggle("dark");
+  document.getElementById("mail").classList.toggle("dark");
+  document.getElementById("password").classList.toggle("dark");
   console.log("kakoukaoku");
-});
+}); */
+
+document.querySelector("#checkbox").addEventListener("click", () => {
+    const $body = document.querySelector("body");
+    $body.dataset.theme = $body.dataset.theme === "light" ? "dark" : "light";
+    document.getElementById("video").classList.toggle("dark");
+  });
