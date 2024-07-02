@@ -57,7 +57,7 @@ html{
 
     .hero{
         height: 700px;
-        background-color: aqua;
+        background-color: var(--background);
         position: sticky;
         display: flex;
         flex-direction: column;
