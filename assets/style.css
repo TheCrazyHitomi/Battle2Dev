@@ -3,10 +3,12 @@
 	src: url('/Battle2Dev/assets/Fonts/soria-font-webfont.woff') format(‘woff’),
 }
 
-@font-face {
+/* @font-face {
 	font-family: 'YoungSerif';
 	src: url('/Battle2Dev/assets/Fonts/YoungSerif-Regular.woff2') format(‘woff2’),
-}
+} */
+
+@import url('https://fonts.googleapis.com/css2?family=Young+Serif&display=swap');
 
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap');
 
@@ -15,139 +17,152 @@ html{
     max-width: 100%;
 }
 
-body{
-    margin: 0;
+
+@media (Prefers-color-scheme: light){
+    body{
+        margin: 0;
+        background-color:lavenderblush;
+    }
+
+    .hero{
+        height: 700px;
+        background-color: aqua;
+        position: sticky;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .hero video{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: 1;
+    }
+
+    .hero .formContainer {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        z-index: 4;
+        
+    }
+
+    h1{
+        font-family: 'Soria', sans-serif;
+        font-size: 3rem;
+    }
+
+    h2{
+        font-family: 'Young Serif', sans-serif;
+        font-size: calc(1.3rem + 0.5vw);
+        margin-bottom: 0.5rem;
+    }
+
+    h3{
+        font-family: 'Young Serif', serif;
+        font-size: calc(1rem + 0.1vw);
+        margin-bottom: 0.2rem;
+    }
+
+    a{
+        color: darkolivegreen;
+    }
+
+    ::placeholder{
+        color: darkolivegreen;
+    }
+
+    header{
+        z-index: 10;
+        position: absolute;
+        margin: 0;
+        background: linear-gradient( rgb(196, 226, 136, 1), rgb(196, 226, 136, 0));
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .formContainer{ 
+        background: linear-gradient( rgb(196, 226, 136, 0), rgb(196, 226, 136, 0.6), rgb(196, 226, 136, 0));
+        backdrop-filter: blur(10px);
+        width: calc(15rem + 2vw);
+        border-radius: 2rem;
+        padding: 1rem;
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        justify-content: center;
+    }
+
+    .form{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; 
+        margin: 1.5rem;
+        width: 200px;
+    }
+    .inputForm{
+        font-family: 'Space Grotesk', sans-serif;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    label{
+        padding-top: 0.5rem;
+    }
+
+    input {
+        width: 100%;
+        border-radius: 0.7rem 0 2rem 0;
+        border: 1.5px solid darkolivegreen;
+        background-color: rgba(180, 248, 168, 0.3);
+    }
+
+
+
+    .button{
+        display: flex;
+        justify-content: center;
+        margin-top: 1rem;
+    }
+
+    button{
+        font-family: 'Soria', serif;
+        font-size: large;
+        border-radius: 5rem 0 5rem 0;
+        border: none;
+        background-color: yellowgreen;
+        padding-inline: 1rem;
+        padding-top: 0.4rem;
+        box-shadow: 2px 2px 5px 1px rgba(9, 48, 2, 0.5);
+        transition: all 0.3s ease-in;
+        
+    }
+
+    button:hover{
+        color:rgb(252, 240, 244);
+        background-color: rgba(250, 86, 159, 0.64);
+        border-radius: 5rem ;
+        transition: all 0.3s ease-in;
+    }
+
+    footer{
+        position: relative;
+        padding: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient( rgb(196, 226, 136, 1), rgb(196, 226, 136, 0));
+    }
 }
-
-.hero{
-    height: 700px;
-    background-color: aqua;
-    position: sticky;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-.hero video{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: 1;
-}
-
-.hero .formContainer {
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    z-index: 4;
-    
-}
-
-h1{
-    font-family: 'Soria', sans-serif;
-    font-size: 3rem;
-}
-
-h2{
-    font-family: 'Space Grotesk', sans-serif;
-    font-size: calc(1rem + 0.5vw);
-    margin-bottom: 0.5rem;
-}
-
-h3{
-    font-family: 'YoungSerif', serif;
-    font-size: 1rem;
-    margin-bottom: 0.2rem;
-}
-
-header{
-    z-index: 10;
-    position: absolute;
-    margin: 0;
-    background: linear-gradient( rgb(196, 226, 136, 1), rgb(196, 226, 136, 0));
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-.formContainer{
-    background: linear-gradient( rgb(196, 226, 136, 0), rgb(196, 226, 136, 1), rgb(196, 226, 136, 0));
-    width: calc(15rem + 2vw);
-    border-radius: 2rem;
-    padding: 1rem;
-    display: flex;
-    flex-direction: column;
-    align-content: center;
-    justify-content: center;
-}
-
-.form{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; 
-    margin: 1.5rem;
-    width: 200px;
-}
-.inputForm{
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-}
-
-label{
-    padding-top: 0.5rem;
-}
-
-input {
-    width: 100%;
-    border-radius: 0.7rem 0 2rem 0;
-    border: 1.5px solid yellowgreen;
-    background-color: rgba(180, 248, 168, 0.3);
-}
-
-
-
-.button{
-    display: flex;
-    justify-content: center;
-    margin-top: 1rem;
-}
-
-button{
-    font-family: 'Soria', serif;
-    font-size: large;
-    border-radius: 5rem 0 5rem 0;
-    border: none;
-    background-color: yellowgreen;
-    padding-inline: 1rem;
-    padding-top: 0.4rem;
-    box-shadow: 2px 2px 5px 1px rgba(9, 48, 2, 0.5);
-    transition: all 0.3s ease-in;
-    
-}
-
-button:hover{
-    color:rgb(252, 240, 244);
-    background-color: rgba(246, 174, 246, 0.64);
-    border-radius: 5rem ;
-    transition: all 0.3s ease-in;
-}
-
-footer{
-    position: relative;
-    padding: 30px;
-    background: linear-gradient(  rgb(196, 226, 136, 0), rgb(196, 226, 136, 1));
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
 
 
 /* CSS toggle */
@@ -160,7 +175,6 @@ footer{
     margin-left: 5vw;
     display: flex;
     align-items: center;
-
 }
 
 
@@ -168,7 +182,7 @@ footer{
 .switch-3 {
     --dark-sky: #2d2a41;
     --moon: #ede5a3;
-    --light-sky:rgba(246, 174, 246, 0.64);
+    --light-sky:rgba(250, 86, 159);
     --sun: #f7f7f7;
     display: inline-block;
     position: relative;
@@ -227,4 +241,16 @@ footer{
     fill: var(--sun);
     transition: 0.5s;
     opacity: 0;
+  }
+
+
+  @media (Prefers-color-scheme: dark){
+    body{
+        background-color: #2d2a41;
+        color:#ede5a3 ;
+    }
+
+    .hero{
+        filter: grayscale(50%);
+    }
   }
