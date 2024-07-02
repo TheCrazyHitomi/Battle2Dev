@@ -2,6 +2,17 @@
 
 
 const strengthElement = document.getElementById("passwordStrength");
+const validElement = document.getElementById("validateMail");
+const inputMail = document.getElementById("mail");
+
+function checkMail(mail) {
+
+    if (mail.value === ""){
+        return "Adresse mail invalide";
+    } else {
+        return "Adresse mail valide";
+    }
+}
 
 function checkPasswordStrength(password){
     //définir les variables de départ
@@ -66,13 +77,18 @@ function checkPasswordStrength(password){
 const btnConnexion = document.querySelector("button");
 const inputPassword = document.getElementById("password");
 
+inputMail. addEventListener("change", function () {
+    validElement.innerHTML = checkMail(inputMail.value);
+});
+
+
 inputPassword.addEventListener("keydown", function () {
     strengthElement.innerHTML = checkPasswordStrength(inputPassword.value);
 });
 
 btnConnexion.addEventListener("click", function (event) {
     event.preventDefault();
-    if (strengthElement.innerHTML === "Mot de passe Validé") {
+    if ((validElement.innerHTML === "Adresse mail valide") && (strengthElement.innerHTML === "Mot de passe Validé")) {
         window.open("coucou.html");
     } else {
         window.alert("Fatal Error 418");
