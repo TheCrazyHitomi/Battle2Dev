@@ -1,7 +1,3 @@
-// ** Module de vérification de mot de passe & validation du formulaire **
-
-
-const strengthElement = document.getElementById("passwordStrength");
 const validElement = document.getElementById("validateMail");
 const inputMail = document.getElementById("mail");
 
@@ -12,7 +8,11 @@ function checkMail(mail) {
     } else {
         return "Adresse mail valide";
     }
-}
+};
+// ** Module de vérification de mot de passe & validation du formulaire **
+
+
+const strengthElement = document.getElementById("passwordStrength");
 
 function checkPasswordStrength(password){
     //définir les variables de départ
@@ -51,9 +51,6 @@ function checkPasswordStrength(password){
     else {
         tips += "<li>Inclure un caractère Spécial</li>";
     }
-
-
-    
 
 
     // retour sur les résultats obtenues
@@ -99,21 +96,8 @@ btnConnexion.addEventListener("click", function (event) {
 
 // ** Dark mode Toggle **
 
-/* const checkbox = document.getElementById("checkbox");
-checkbox.addEventListener("change", () => {
-  document.body.classList.toggle("dark");
-  document.getElementById("video").classList.toggle("dark");
-  document.getElementById("header").classList.toggle("dark");
-  document.getElementById("formContainer").classList.toggle("dark");
-  document.getElementById("button").classList.toggle("dark");
-  document.getElementById("footer").classList.toggle("dark");
-  document.getElementById("mail").classList.toggle("dark");
-  document.getElementById("password").classList.toggle("dark");
-  console.log("kakoukaoku");
-}); */
-
 document.querySelector("#checkbox").addEventListener("click", () => {
     const $body = document.querySelector("body");
     $body.dataset.theme = $body.dataset.theme === "light" ? "dark" : "light";
     document.getElementById("video").classList.toggle("dark");
-  });
+    });
